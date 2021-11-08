@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STiBaRC</title>
+    <link rel="icon" type="image/png" href="./assets/images/icon.png">
+    <!-- CSS -->
+    <link href="./assets/css/global.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main>
+        <nav class="nav">
+            <div class="container nav-container">
+                <a class="logo" href="./"><img src="./assets/images/logo-80.png" alt="Logo"></a>
+                <span class="flex-grow"></span>
+                <div class="loggedOut">
+                    <a href="https://stibarc.com/oauth/?id=17f9de2a01219ab488b8&perms=" class="button">Sign&nbsp;in</a>
+                </div>
+                <div class="loggedIn">
+                    <button class="user-button" id="pfpBtn">
+                        <div class="pfp">
+                            <img id="pfpBtnImg" class="pfp"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="Pfp">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="container nav-dd-container" id="pfpDropdown" style="display: none;">
+            <div class="nav-height"></div>
+            <div class="dropdown">
+                <div class="header"><span id="pfpUsername">a</span></div>
+                <div class="divider"></div>
+                <div class="items"><a href="./logout.html" class="item logout">Sign&nbsp;out</a></div>
+            </div>
+        </div>
+        <div class="page">
+            <div class="nav-height"></div>
+            <div class="container">
+                <h1 class="title">Recent posts</h1>
+            </div>
+        </div>
+    </main>
+
+    <script src="./assets/js/global.js"></script>
+
+</body>
+
+</html>
