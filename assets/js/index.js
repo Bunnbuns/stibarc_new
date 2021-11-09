@@ -1,7 +1,8 @@
 function toBlock(id, data) {
     console.log(post)
-    var post = document.createElement("div")
+    var post = document.createElement("a")
     post.setAttribute("class", "post")
+    post.setAttribute("href", "https://stibarc.com/post.html?id=" + id)
     var top = document.createElement("div")
     top.appendChild(document.createTextNode(data['title']))
     post.appendChild(top)
@@ -18,4 +19,4 @@ fetch("https://api.stibarc.com/v2/getposts.sjs").then(response => response.json(
         posts.appendChild(toBlock(keys[i], json[keys[i]]))
     }
     $("recent-posts").appendChild(posts)
-}).catch((err) => {})
+}).catch((err) => { })

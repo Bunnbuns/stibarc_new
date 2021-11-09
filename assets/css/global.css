@@ -16,6 +16,10 @@ a, span, div, body, button, input, img, form, h1, h2, h3, h4, h5, h6, code {
     vertical-align: baseline;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -379,6 +383,7 @@ main {
 }
 
 .posts .post {
+    display: block;
     background-color: var(--item);
     color: inherit;
     padding: 0.75rem 0.75rem 0.75rem 0.75rem;
