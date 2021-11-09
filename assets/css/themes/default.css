@@ -1,0 +1,15 @@
+:root {
+    --stib-blue: #98dff3;
+    --stib-blue-text: rgba(0, 0, 0, 0.96);
+    --stib-blue-2: #49b9ca;
+    --stib-blue-2-text: #ffffff;
+    --item: #ffffff;
+    --item-hover: #e5f6ff;
+    --item-focus: #d6ebf5;
+    --item-primary: #49b9ca;
+    --item-primary-hover: #59d1e3;
+    --item-primary-focus: #52b7c7;
+    --dropdown: #ffffff;
+    --dropdown-text: #141515;
+    --divider: #e5f6ff;
+}
