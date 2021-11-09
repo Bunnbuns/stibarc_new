@@ -28,7 +28,8 @@
                 <span class="flex-grow"></span>
                 <div class="loggedOut">
                     <a href="https://stibarc.com/register.html" class="button">Sign&nbsp;up</a>
-                    <a href="https://stibarc.com/oauth/?id=17f9de2a01219ab488b8&perms=" class="button outline">Sign&nbsp;in</a>
+                    <a href="https://stibarc.com/oauth/?id=17f9de2a01219ab488b8&perms="
+                        class="button outline">Sign&nbsp;in</a>
                 </div>
                 <div class="loggedIn">
                     <button class="user-button" id="pfpBtn">
@@ -44,7 +45,7 @@
         <div class="container nav-dd-container" id="pfpDropdown" style="display: none;">
             <div class="nav-height"></div>
             <div class="dropdown">
-                <div class="header"><span id="pfpUsername">a</span></div>
+                <div class="header"><span id="pfpUsername"></span></div>
                 <div class="divider"></div>
                 <div class="items"><a href="./logout.html" class="item logout">Sign&nbsp;out</a></div>
             </div>
@@ -52,12 +53,25 @@
         <div class="page">
             <div class="nav-height"></div>
             <div class="container">
-                <h1 class="title">Recent posts</h1>
+                <div class="flex-center">
+                    <h1 class="title">Recent posts</h1>
+                    <div class="flex-grow"></div>
+                    <div class="loggedIn">
+                        <button class="button">Global</button>
+                        <button class="button outline">Following</button>
+                    </div>
+                </div>
+                <div id="recent-posts">
+                    <div class="loader-container">
+                        <div class="loader"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <script src="./assets/js/global.js"></script>
+    <script src="./assets/js/index.js"></script>
 
 </body>
 
