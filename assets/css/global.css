@@ -1,5 +1,3 @@
-/*import './themes/default.css';*/
-
 * {
     box-sizing: border-box;
 }
@@ -78,6 +76,15 @@ main {
 
 .nav-height {
     height: 4.5rem;
+}
+
+.nav .nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.nav .nav-items a:not(:last-child) {
+    margin-right: 0.65rem;
 }
 
 .user-button {
@@ -230,7 +237,7 @@ main {
 
 .button.primary {
     background-color: var(--item-primary);
-    color: var(--stib-blue-text);
+    color: var(--stib-blue-2-text);
 }
 
 .button.primary:hover {
@@ -284,6 +291,35 @@ main {
     background-color: transparent;
 }
 
+.button.square {
+    padding: 0.75rem;
+}
+
+.button.circle {
+    padding: 0.75rem;
+    border-radius: 50%;
+}
+
+.button.with-icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.button.with-icon span {
+    font-size: inherit;
+}
+
+.button.icon {
+    padding: 0.75rem;
+    background-color: transparent;
+    color: var(--stib-blue-2-text);
+    border-radius: 50%;
+}
+
+.button.icon:hover {
+    background-color: var(--stib-blue-3);
+}
+
 /* inputs */
 
 .input {
@@ -305,13 +341,13 @@ main {
 }
 
 .input.primary {
-    background-color: #60c9da;
-    border-color: #43afc0;
+    background-color: var(--stib-blue-3);
+    border-color: var(--stib-blue-2);
     color: #fff;
 }
 
 .input.primary:focus {
-    border-color: #43afc0;
+    border-color: var(--stib-blue-2);
 }
 
 .input.red, .input.red:focus {
@@ -335,7 +371,7 @@ main {
     font-size: 0.95rem;
     font-weight: 500;
     margin-bottom: 0.3rem;
-    color: #2eaabd;
+    color: var(--input-label);
 }
 
 /* loading spiner */
