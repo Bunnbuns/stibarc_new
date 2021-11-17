@@ -35,8 +35,8 @@ function truncate(str, len) {
 
 function toBlock(id, post) {
     return (`<div class="post" onclick="goToPost(${id});">
-		<a href="post.html?id=${id}"><b>${emojify(sanetize(truncate(post.title, 100)))}</b></a>
-		<div class="meta" style="margin-top:3px;">
+		<a class="post-title" href="post.html?id=${id}"><b>${emojify(sanetize(truncate(post.title, 100)))}</b></a>
+		<div class="meta">
 			<span>
 				Posted by: <a href="user.html?id=${encodeURIComponent(post.poster)}">${sanetize(post.poster)}</a>${post.verified ? "&#10004;&#65039;" : ""}<br/>
 				&#8679; ${post.upvotes} &#8681 ${post.downvotes}
