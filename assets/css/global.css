@@ -16,6 +16,7 @@ a, span, div, body, button, input, img, form, h1, h2, h3, h4, h5, h6, code {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 body {
@@ -320,6 +321,23 @@ main {
     background-color: var(--stib-blue-3);
 }
 
+.button.icon:focus {
+    background-color: var(--item-primary-hover);
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--item);
+    border-radius: 6px;
+}
+
+.button-group .button {
+    border: none;
+    border-radius: unset;
+    border-radius: 5px;
+}
+
 /* inputs */
 
 .input {
@@ -415,13 +433,13 @@ main {
 /* posts */
 
 .posts {
-    margin-top: 1rem;
+    margin: 1rem auto;
 }
 
 .posts .post {
     display: block;
     background-color: var(--item);
-    color: inherit;
+    color: var(--stib-blue-text);
     padding: 0.75rem 0.75rem 0.75rem 0.75rem;
     border-radius: 8px;
     transition: background 0.125s, color 0.125s;
