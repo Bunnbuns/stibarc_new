@@ -84,17 +84,13 @@ main {
     align-items: center;
 }
 
-.nav .nav-items a:not(:last-child) {
-    margin-right: 0.65rem;
+.nav .nav-items a:not(:last-child), .nav .nav-items button:not(:last-child), .nav .nav-items input:not(:last-child) {
+    margin-right: 0.55rem;
 }
 
 .user-button {
     width: 40px;
     height: 40px;
-}
-
-.top-bar .user-button {
-    margin-left: 0.75rem;
 }
 
 .pfp {
@@ -126,7 +122,7 @@ main {
 }
 
 .nav-dd-container .dropdown {
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 /* dropdown */
@@ -140,7 +136,7 @@ main {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     min-width: 10rem;
-    z-index: 10;
+    z-index: 100;
     pointer-events: visible;
     text-decoration: none;
 }
@@ -188,7 +184,7 @@ main {
 .page {
     background-color: var(--stib-blue);
     min-height: calc(100vh - 1rem);
-    margin-top: 1rem;
+    padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
@@ -318,11 +314,11 @@ main {
 }
 
 .button.with-icon span {
-    font-size: inherit;
+    font-size: 1.25rem;
 }
 
 .button.icon {
-    padding: 0.75rem;
+    padding: 0.5rem;
     background-color: transparent;
     color: var(--stib-blue-2-text);
     border-radius: 50%;
@@ -349,15 +345,19 @@ main {
     border-radius: 5px;
 }
 
+/* .button-group .button:not(:last-of-type) {
+    margin-right: 0.25rem;
+} */
+
 /* inputs */
 
 .input {
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--item);
     border: 2px solid var(--item-primary);
-    padding: 0.55rem 0.75rem;
+    padding: calc(0.55rem - 1px) calc(0.75rem - 1px);
     border-radius: 6px;
-    font-size: 16px;
+    font-size: inherit;
 }
 
 .input.full {
@@ -372,7 +372,11 @@ main {
 .input.primary {
     background-color: var(--stib-blue-3);
     border-color: var(--stib-blue-2);
-    color: #fff;
+    color: var(--item);
+}
+
+.input.primary::placeholder {
+    color: var(--item-hover)
 }
 
 .input.primary:focus {
@@ -381,6 +385,10 @@ main {
 
 .input.red, .input.red:focus {
     border-color: #e73939;
+}
+
+.input.no-border {
+    padding: 0.55rem 0.75rem;
 }
 
 .inputContainer .input:last-child {
@@ -401,6 +409,15 @@ main {
     font-weight: 500;
     margin-bottom: 0.3rem;
     color: var(--input-label);
+}
+
+.input.search {
+    padding: 0.55rem 0.75rem 0.55rem 37px;
+    background-image: url(../icons/search_white_24dp.svg);
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 9px;
 }
 
 /* loading spiner */
@@ -439,6 +456,10 @@ main {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.no-border {
+    border: none!important;
 }
 
 /* posts */

@@ -27,20 +27,25 @@
             <div class="container nav-container">
                 <a class="logo" href="./"><img src="./assets/images/logo-80.png" alt="Logo"></a>
                 <span class="flex-grow"></span>
-                <div class="loggedOut">
-                    <a href="https://stibarc.com/register.html" class="button">Sign&nbsp;up</a>
-                    <a href="https://stibarc.com/oauth/?id=17f9de2a01219ab488b8&perms="
-                        class="button outline">Sign&nbsp;in</a>
-                </div>
-                <div class="loggedIn nav-items">
-                    <a class="button icon with-icon" href="#"><span class="material-icons">add</span></a>
-                    <button class="user-button" id="pfpBtn">
-                        <div class="pfp">
-                            <img id="pfpBtnImg" class="pfp"
-                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="Pfp">
-                        </div>
-                    </button>
+                <div class="nav-items">
+                    <!-- <a class="button icon with-icon" href="#"><span class="material-icons">search</span></a> -->
+                    <div class="loggedOut">
+                        <input class="input search primary no-border" placeholder="Search">
+                        <a href="https://stibarc.com/register.html" class="button">Sign&nbsp;up</a><a
+                            href="https://stibarc.com/oauth/?id=17f9de2a01219ab488b8&perms="
+                            class="button outline">Sign&nbsp;in</a>
+                    </div>
+                    <div class="loggedIn flex-center">
+                        <input class="input search primary no-border" placeholder="Search">
+                        <a class="button icon with-icon" href="#"><span class="material-icons">add</span></a>
+                        <button class="user-button" id="pfpBtn">
+                            <div class="pfp">
+                                <img id="pfpBtnImg" class="pfp"
+                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                    alt="Pfp">
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
