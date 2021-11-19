@@ -341,7 +341,8 @@ main {
 .button-group {
     display: flex;
     align-items: center;
-    border: 1px solid var(--item);
+    border: 2px solid var(--item);
+    background-color: var(--item);
     border-radius: 6px;
 }
 
@@ -351,9 +352,10 @@ main {
     border-radius: 5px;
 }
 
-/* .button-group .button:not(:last-of-type) {
-    margin-right: 0.25rem;
-} */
+.button-group .button:not(:last-of-type) {
+    /* border-top-right-radius: 0;
+    border-bottom-right-radius: 0; */
+}
 
 /* inputs */
 
@@ -515,6 +517,7 @@ main {
 }
 
 .posts .post .post-title {
+    display: block;
     font-size: 1.15rem;
 }
 
