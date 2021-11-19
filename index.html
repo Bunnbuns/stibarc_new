@@ -30,14 +30,15 @@
                 <div class="nav-items">
                     <!-- <a class="button icon with-icon" href="#"><span class="material-icons">search</span></a> -->
                     <div class="loggedOut">
-                        <input class="input search primary no-border" placeholder="Search">
+                        <input class="input search primary no-border" type="search" placeholder="Search">
                         <a href="https://stibarc.com/register.html" class="button">Sign&nbsp;up</a><a
                             href="https://stibarc.com/oauth/?id=17f9de2a01219ab488b8&perms="
                             class="button outline">Sign&nbsp;in</a>
                     </div>
                     <div class="loggedIn flex-center">
-                        <input class="input search primary no-border" placeholder="Search">
-                        <a class="button icon with-icon" href="#"><span class="material-icons">add</span></a>
+                        <input class="input search primary no-border" type="search" placeholder="Search">
+                        <a class="button icon with-icon" href="#" title="Create Post"><span
+                                class="material-icons">add</span></a>
                         <button class="user-button" id="pfpBtn">
                             <div class="pfp">
                                 <img id="pfpBtnImg" class="pfp"
@@ -57,7 +58,7 @@
                 <div class="items"><a href="./logout.html" class="item logout">Sign&nbsp;out</a></div>
             </div>
         </div>
-        <div class="page">
+        <div class="page" style="min-height: calc(100vh - 6rem);">
             <div class="nav-height"></div>
             <div class="container">
                 <div class="flex-center">
@@ -76,6 +77,27 @@
             </div>
         </div>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="top flex-center">
+                <a href="https://team.stibarc.com" target="_blank">
+                    <img class="footer-logo" src="./assets/images/footer_logo.png" alt="STiBaRC Team logo"
+                        height="35px">
+                </a>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="container flex-center">
+                <h2>&copy;&nbsp;2021&nbsp;<a href="https://stibarc.com">STiBaRC, LLC</a></h2>
+                <span class="flex-grow"></span>
+                <span>
+                    <a href="https://stibarc.com/tos.html" target="_blank">Terms</a>
+                    <span class="separator">/</span>
+                    <a href="https://stibarc.com/privacy.html" target="_blank">Privacy</a>
+                </span>
+            </div>
+        </div>
+    </footer>
 
     <script src="./assets/js/global.js"></script>
     <script src="./assets/js/index.js"></script>

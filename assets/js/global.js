@@ -38,7 +38,7 @@ function toBlock(id, post) {
 		<a class="post-title" href="post.html?id=${id}"><b>${emojify(sanetize(truncate(post.title, 100)))}</b></a>
 		<div class="meta">
 			<span>
-				Posted&nbsp;by&nbsp;<a href="user.html?id=${encodeURIComponent(post.poster)}">${sanetize(post.poster)}</a>${post.verified ? "&#10004;&#65039;" : ""}<br/>
+				Posted&nbsp;by&nbsp;<a class="username" href="user.html?id=${encodeURIComponent(post.poster)}">${sanetize(post.poster)}</a>${post.verified ? "&#10004;&#65039;" : ""}<br/>
 				&#8679; ${post.upvotes} &#8681 ${post.downvotes}
 			</span>
 		</div>
