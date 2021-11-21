@@ -65,11 +65,16 @@
                     <h1 class="title">Recent posts</h1>
                     <div class="flex-grow"></div>
                     <div class="button-group loggedIn">
-                        <button class="button small primary">Global</button>
-                        <button class="button small">Following</button>
+                        <button class="button small primary" id="global-btn">Global</button>
+                        <button class="button small" id="followed-btn">Following</button>
                     </div>
                 </div>
-                <div class="posts" id="recent-posts">
+                <div class="posts" id="global-posts">
+                    <div class="loader-container">
+                        <div class="loader"></div>
+                    </div>
+                </div>
+                <div class="posts" id="followed-posts" style="display: none;">
                     <div class="loader-container">
                         <div class="loader"></div>
                     </div>
