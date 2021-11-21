@@ -43,24 +43,24 @@ function loadMoreBlock(id) {
 function loadMore(id) {
     if (id == "followed-load-more") {
         fetch(`${rootAPI}/v3/getfollowposts.sjs?sess=${sess}&id=${lastfollowloaded}`).then(response => response.json()).then((json) => {
-            lastloaded = lastloaded - 20
-            var keys = Object.keys(json)
+            var keys = Object.keys(json);
             var posts = ""
-            for (var i = keys.length-1; i >= 0; i--) {
+            for (var i = keys.length - 1; i >= 0; i--) {
                 posts += toBlock(keys[i], json[keys[i]])
                 lastfollowloaded = keys[i]
             }
             lastfollowloaded = keys[0]
             $("followed-posts").innerHTML += posts
         }).catch((err) => { console.log(err) })
-    } else {
+    } else if ("global-load-more") {
         fetch(`${rootAPI}/v2/getposts.sjs?id=${lastloaded}`).then(response => response.json()).then((json) => {
+            var keys = Object.keys(json);
             var posts = "";
             for (var i = lastloaded - 1; i > lastloaded - 21; i--) {
                 posts += toBlock(i, json[i])
             }
-            $("global-posts").innerHTML += posts
             lastloaded = lastloaded - 20;
+            $("global-posts").innerHTML += posts
         }).catch((err) => { console.log(err) })
     }
 
@@ -69,11 +69,12 @@ function loadMore(id) {
 function loadPosts() {
     fetch(`${rootAPI}/v2/getposts.sjs`).then(response => response.json()).then((json) => {
         $("global-posts").innerHTML = ""
-        var keys = Object.keys(json)
-        lastloaded = keys[0]
-        var posts = ""
+        delete json.totalposts;
+        var keys = Object.keys(json);
+        lastloaded = keys[0];
+        var posts = "";
         for (var i = 19; i >= 0; i--) {
-            posts += toBlock(keys[i], json[keys[i]])
+            posts += toBlock(keys[i], json[keys[i]]);
         }
         $("global-posts").innerHTML = posts
         $("loadMoreContainer").appendChild(loadMoreBlock("global-load-more"))

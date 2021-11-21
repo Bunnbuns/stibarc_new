@@ -470,6 +470,12 @@ main {
     border: none!important;
 }
 
+.emoji {
+    max-width: 32px;
+    max-height: 32px;
+    vertical-align: middle;
+}
+
 /* footer */
 
 .footer {
@@ -534,6 +540,7 @@ main {
 
 .posts .post .post-title {
     font-size: 1.15rem;
+    word-wrap: break-word;
 }
 
 .posts .post .meta {
