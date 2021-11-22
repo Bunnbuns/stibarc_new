@@ -138,7 +138,10 @@ if (loggedIn) {
     }
 }
 
-// get profile info //
+if(localStorage.getItem('pfp') !== null && localStorage.getItem('pfp') !== "") {
+    $("pfpBtnImg").src = localStorage.getItem('pfp');
+}
+
 function getUserInfo() {
     var xhttp = new XMLHttpRequest()
     xhttp.onload = function () {
@@ -146,12 +149,14 @@ function getUserInfo() {
         localStorage.setItem("username", username)
         getUserPfp('pfpBtnImg', username)
         $("pfpUsername").textContent = username
+        $("pfpUsername").title = `Signed in as ${username}`
+        $("pfpUsername").href = `./user.html?id=${username}`
+        $("pfpBtnImg").title = `Signed in as ${username}`
     };
-    xhttp.open('GET', rootAPI + '/v2/getusername.sjs?sess=' + localStorage.getItem("sess"), true)
+    xhttp.open('GET', `${rootAPI}/v2/getusername.sjs?sess=${localStorage.getItem("sess")}`, true)
     xhttp.send();
 }
 
-// get profile pfp //
 function getUserPfp(callback, username) {
     var xhttp = new XMLHttpRequest()
     xhttp.onload = function () {
@@ -159,10 +164,10 @@ function getUserPfp(callback, username) {
         if (callback == 'post') {
             $("postPfp").src = userPfp
         } else {
-            localStorage.setItem('pfp', userPfp)
-            $("pfpBtnImg").src = userPfp
+            localStorage.setItem("pfp", userPfp)
+            $("pfpBtnImg").src = localStorage.getItem("pfp")
         }
     };
-    xhttp.open('GET', rootAPI + '/v2/getuserpfp.sjs?id=' + username, true)
+    xhttp.open('GET', `${rootAPI}/v2/getuserpfp.sjs?id=${username}`, true)
     xhttp.send()
 }
