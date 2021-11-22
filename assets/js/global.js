@@ -1,6 +1,11 @@
 const rootAPI = "https://api.stibarc.com"
 const rootCDN = "https://cdn.stibarc.com"
 
+var images = ["png", "jpg", "gif", "webp", "svg"]
+var videos = ["mov", "mp4", "webm"]
+var audios = ["spx", "m3a", "m4a", "wma", "wav", "mp3"]
+var htmlers = ["herronjo", "DomHupp", "Aldeenyo", "savaka", "alluthus", "Bunnbuns", "Merkle", "flolon"]
+
 function $(id) {
     if (id.startsWith(".")) {
         return document.getElementsByClassName(id.substring(1))
@@ -42,7 +47,7 @@ function toBlock(id, post) {
 		<a class="post-title" href="post.html?id=${id}"><b>${emojify(sanetize(truncate(post.title, 100)))}</b></a>
 		<div class="meta">
 			<div class="flex-center">
-				Posted&nbsp;by&nbsp;<a class="username" href="user.html?id=${encodeURIComponent(post.poster)}">${sanetize(post.poster)}</a>${post.verified ? verifiedUser() : ""}
+				Posted&nbsp;by&nbsp;<a class="author" href="user.html?id=${encodeURIComponent(post.poster)}"><span class="username">${sanetize(post.poster)}</span><span>${post.verified ? verifiedUser() : ""}<span></a>
 			</div>
             <div>
                 &#8679; ${post.upvotes} &#8681 ${post.downvotes}
@@ -84,6 +89,16 @@ function emojify(text) {
         }
         return text
     }
+}
+
+function greenify(text) {
+    var conttemp = text.replace(/\r/g, "").split("\n")
+    for (var i in conttemp) {
+        if (conttemp[i].substring(0, 4) == "&gt;" || conttemp[i].substring(0, 1) == ">") {
+            conttemp[i] = `<span style="color:green;">${conttemp[i]}</span>`
+        }
+    }
+    return conttemp.join("<br/>")
 }
 
 document.addEventListener("click", function (event) {

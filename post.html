@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STiBaRC</title>
+    <link rel="icon" type="image/png" href="./assets/images/icon.png">
+    <!-- CSS -->
+    <link href="./assets/css/global.css" rel="stylesheet">
+    <link href="./assets/css/themes/default.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;1,400&family=Spartan:wght@700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main>
+        <nav class="nav">
+            <div class="container nav-container">
+                <a class="logo" href="./"><img src="./assets/images/logo-80.png" alt="Logo"></a>
+                <span class="flex-grow"></span>
+                <div class="nav-items">
+                    <div class="loggedOut">
+                        <input class="input search primary no-border" type="search" placeholder="Search">
+                        <a class="button search-btn icon with-icon" href="./search.html" title="Search"><img
+                                src="./assets/icons/search_white_24dp.svg"></a>
+                        <a href="https://stibarc.com/register.html" class="button">Sign&nbsp;up</a><a
+                            href="https://stibarc.com/oauth/?id=17f9de2a01219ab488b8&perms="
+                            class="button outline">Sign&nbsp;in</a>
+                    </div>
+                    <div class="loggedIn flex-center">
+                        <input class="input search primary no-border" type="search" placeholder="Search">
+                        <a class="button search-btn icon with-icon" href="./search.html" title="Search"><img
+                                src="./assets/icons/search_white_24dp.svg"></a>
+                        <a class="button icon with-icon" href="#" title="Create Post"><span
+                                class="material-icons-round">add</span></a>
+                        <button class="user-button" id="pfpBtn">
+                            <div class="pfp">
+                                <img id="pfpBtnImg" class="pfp"
+                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                    alt="Pfp">
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container nav-dd-container" id="pfpDropdown" style="display: none;">
+            <div class="nav-height"></div>
+            <div class="dropdown">
+                <div class="header">
+                    <a id="pfpUsername"></a>
+                </div>
+                <div class="divider"></div>
+                <div class="items">
+                    <a href="#" class="item">Profile</a>
+                    <a href="#" class="item">Settings</a>
+                </div>
+                <div class="divider"></div>
+                <div class="items"><a href="./logout.html" class="item logout">Sign&nbsp;out</a></div>
+            </div>
+        </div>
+        <div class="page" style="min-height: calc(100vh - 9.55rem);">
+            <div class="nav-height"></div>
+            <div class="container">
+                <div class="loader-container" id="loader">
+                    <div class="loader"></div>
+                </div>
+                <div class="post" id="post">
+                    <h1 class="title" id="title">Loading</h1>
+                    <a id="author">
+                        <img class="pfp" id="pfp"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <span id="username">Loading</span>
+                        <span id="verified"></span>
+                    </a>
+                    <div id="date">Loading</div>
+                    <div id="content">
+                        Loading
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="top flex-center">
+                <a href="https://team.stibarc.com" target="_blank">
+                    <img class="footer-logo" src="./assets/images/footer_logo.png" alt="STiBaRC Team logo"
+                        height="35px">
+                </a>
+                <span class="flex-grow"></span>
+                <div class="social">
+                    <a href="https://twitter.com/STiBaRC" target="_blank" title="@STiBaRC"><img class="icon"
+                            src="./assets/icons/twitter_white.svg" alt="Twitter"></a>
+                    <a href="https://github.com/STiBaRC" target="_blank" title="/STiBaRC"><img class="icon"
+                            src="./assets/icons/github_white.svg" alt="GitHub"></a>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="container flex-center">
+                <div>
+                    <div class="flex-center">
+                        <span>President: Aldeenyo (Alden Savon)</span>
+                        <span class="separator">/</span>
+                        <span>Icon by Alex Ortega</span>
+                    </div>
+                    <div>&copy;&nbsp;2021&nbsp;<a href="https://stibarc.com">STiBaRC, LLC</a></div>
+                </div>
+                <span class="flex-grow"></span>
+                <span>
+                    <a href="https://stibarc.com/tos.html" target="_blank">Terms</a>
+                    <span class="separator">/</span>
+                    <a href="https://stibarc.com/privacy.html" target="_blank">Privacy</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/global.js"></script>
+    <script src="./assets/js/post.js"></script>
+
+</body>
+
+</html>

@@ -211,7 +211,7 @@ main {
 
 .page {
     background-color: var(--stib-blue);
-    min-height: calc(100vh - 4rem);
+    min-height: 100vh;
     padding-top: 1rem;
     padding-bottom: 3rem;
 }
@@ -576,7 +576,13 @@ main {
     margin-top: 0.2rem;
 }
 
-.post .meta .username {
+.post .meta .author {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.post .meta .author .username {
     font-weight: 500;
 }
 
@@ -586,6 +592,38 @@ main {
     font-size: inherit;
 }
 
-.post .meta .icon {
-    margin-left: 0.15rem;
+.post .meta .verified {
+    margin-left: 0.25rem;
+}
+
+/* post */
+
+.post .title {
+    font-size: 1.65rem;
+    margin-bottom: 0;
+}
+
+.post #author {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0.65rem 0;
+}
+
+.post #pfp {
+    margin-right: 0.4rem;
+}
+
+.post #username {
+    font-weight: 500;
+}
+
+.post .verified {
+    color: var(--stib-blue-2);
+    margin-left: 0.25rem;
+}
+
+.post #date {
+    margin-bottom: 0.75rem;
+    font-size: 95%;
 }
