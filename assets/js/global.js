@@ -37,10 +37,12 @@ function toBlock(id, post) {
     return (`<div class="post" onclick="goToPost(${id});">
 		<a class="post-title" href="post.html?id=${id}"><b>${emojify(sanetize(truncate(post.title, 100)))}</b></a>
 		<div class="meta">
-			<span>
-				Posted&nbsp;by&nbsp;<a class="username" href="user.html?id=${encodeURIComponent(post.poster)}">${sanetize(post.poster)}</a>${post.verified ? "&#10004;&#65039;" : ""}<br/>
-				&#8679; ${post.upvotes} &#8681 ${post.downvotes}
-			</span>
+			<div class="flex-center">
+				Posted&nbsp;by&nbsp;<a class="username" href="user.html?id=${encodeURIComponent(post.poster)}">${sanetize(post.poster)}${post.verified ? '<span class="material-icons-round icon verified">verified</span>' : ""}</a>
+			</div>
+            <div>
+                &#8679; ${post.upvotes} &#8681 ${post.downvotes}
+			</div>
 		</div>
 	</div>`)
 }
@@ -53,7 +55,7 @@ var emojilist = localStorage.emojilist || "{}"
 emojilist = JSON.parse(emojilist)
 
 function refreshEmojis(callback) {
-    fetch(rootCDN + "/emojis/index.json").then(response => response.json()).then((response) => {
+    fetch(`${rootAPI}/emojis/index.json`).then(response => response.json()).then((response) => {
         if (JSON.stringify(response) != localStorage.emojilist) {
             localStorage.emojilist = JSON.stringify(response)
             emojilist = response
@@ -138,7 +140,7 @@ if (loggedIn) {
     }
 }
 
-if(localStorage.getItem('pfp') !== null && localStorage.getItem('pfp') !== "") {
+if (localStorage.getItem('pfp') !== null && localStorage.getItem('pfp') !== "") {
     $("pfpBtnImg").src = localStorage.getItem('pfp');
 }
 

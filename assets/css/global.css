@@ -140,22 +140,32 @@ main {
     border: 3px solid var(--dropdown);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    min-width: 10rem;
+    min-width: 9.5rem;
     z-index: 100;
     pointer-events: visible;
     text-decoration: none;
 }
 
 .dropdown .header {
-    padding: 0.75rem 1.25rem calc(0.75rem + 1px) 1.25rem;
+    padding: 0.6rem 1rem calc(0.6rem + 1px) 1rem;
 }
 
-.dropdown .header #pfpUsername {
+.dropdown #pfpUsername {
     font-weight: 500;
 }
 
 .dropdown .items {
+    padding: 3px 0;
+}
+
+.dropdown .items:first-child {
+    padding-top: 0;
+    padding-bottom: 3px;
+}
+
+.dropdown .items:last-child {
     padding-top: 3px;
+    padding-bottom: 0;
 }
 
 .dropdown .item {
@@ -163,7 +173,7 @@ main {
     align-items: center;
     outline: none;
     text-decoration: none;
-    padding: 0.65rem 1.25rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     color: inherit;
     transition: background 0.125s, color 0.125s;
@@ -476,6 +486,10 @@ main {
     vertical-align: middle;
 }
 
+.verified {
+    color: var(--stib-blue-2)
+}
+
 /* footer */
 
 .footer {
@@ -549,4 +563,14 @@ main {
 
 .post .meta .username {
     font-weight: 500;
+}
+
+.post .icon {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: inherit;
+}
+
+.post .meta .icon {
+    margin-left: 0.15rem;
 }
