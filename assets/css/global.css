@@ -27,7 +27,7 @@ body {
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--stib-blue-2-text);
+    color: var(--stib-blue-text);
 }
 
 button {
@@ -252,7 +252,7 @@ main {
     font-weight: 500;
     transition: all .17s ease-out;
     background-color: var(--item);
-    color: var(--stib-blue-text);
+    color: var(--item-primary);
 }
 
 .button:hover {
