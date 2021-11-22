@@ -27,7 +27,7 @@ body {
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: rgba(0, 0, 0, 0.96);
+    color: var(--stib-blue-2-text);
 }
 
 button {
@@ -91,6 +91,19 @@ main {
 
 .nav .nav-items a:not(:last-child), .nav .nav-items button:not(:last-child), .nav .nav-items input:not(:last-child) {
     margin-right: 0.55rem;
+}
+
+.nav .search-btn {
+    display: none!important;
+}
+
+@media only screen and (max-width: 545px) {
+    .nav .search {
+        display: none!important;
+    }
+    .nav .search-btn {
+        display: inline-block!important;
+    }
 }
 
 .user-button {
@@ -239,7 +252,7 @@ main {
     font-weight: 500;
     transition: all .17s ease-out;
     background-color: var(--item);
-    color: var(--stib-blue-2);
+    color: var(--stib-blue-text);
 }
 
 .button:hover {
@@ -390,11 +403,11 @@ main {
 .input.primary {
     background-color: var(--stib-blue-3);
     border-color: var(--stib-blue-2);
-    color: var(--item);
+    color: var(--stib-blue-2-text);
 }
 
 .input.primary::placeholder {
-    color: var(--item-hover)
+    color: var(--input-placeholder);
 }
 
 .input.primary:focus {
@@ -462,6 +475,7 @@ main {
     0% {
         -webkit-transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(360deg);
     }
@@ -471,13 +485,14 @@ main {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
 }
 
 .no-border {
-    border: none!important;
+    border: none !important;
 }
 
 .emoji {

@@ -1,15 +1,21 @@
 :root {
-    --stib-blue: #98dff3;
-    --stib-blue-text: rgba(0, 0, 0, 0.96);
-    --stib-blue-2: #49b9ca;
-    --stib-blue-2-text: #ffffff;
-    --item: #070707;
-    --item-hover: #e5f6ff;
-    --item-focus: #d6ebf5;
-    --item-primary: #49b9ca;
-    --item-primary-hover: #59d1e3;
-    --item-primary-focus: #52b7c7;
-    --dropdown: #ffffff;
-    --dropdown-text: #141515;
-    --divider: #e5f6ff;
+    --stib-blue: #071314;
+    --stib-blue-text: rgba(255, 255, 255, 0.96);
+    --stib-blue-text-2: rgba(255, 255, 255, 0.9);
+    --stib-blue-2: #0b1e20;
+    --stib-blue-2-text: #f0fbfc;
+    --stib-blue-3: #0f2529;
+    --input-label: #11393f;
+    --input-placeholder: rgba(203, 212, 216, 0.85);
+    --text-light: rgba(255, 255, 255, 0.63);
+    --text-light-2: rgba(255, 255, 255, 0.36);
+    --item: #020505;
+    --item-hover: #050c0c;
+    --item-focus: #040a0a;
+    --item-primary: #183e44;
+    --item-primary-hover: #1a4349;
+    --item-primary-focus: #0e2225;
+    --dropdown: #050505;
+    --dropdown-text: #e5f5f5;
+    --divider: #181a1a;
 }

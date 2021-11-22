@@ -33,12 +33,16 @@ function truncate(str, len) {
     return returnValue
 }
 
+function verifiedUser() {
+    return `<span class="material-icons-round icon verified" title="Verified User">verified</span>`
+}
+
 function toBlock(id, post) {
     return (`<div class="post" onclick="goToPost(${id});">
 		<a class="post-title" href="post.html?id=${id}"><b>${emojify(sanetize(truncate(post.title, 100)))}</b></a>
 		<div class="meta">
 			<div class="flex-center">
-				Posted&nbsp;by&nbsp;<a class="username" href="user.html?id=${encodeURIComponent(post.poster)}">${sanetize(post.poster)}${post.verified ? '<span class="material-icons-round icon verified">verified</span>' : ""}</a>
+				Posted&nbsp;by&nbsp;<a class="username" href="user.html?id=${encodeURIComponent(post.poster)}">${sanetize(post.poster)}</a>${post.verified ? verifiedUser() : ""}
 			</div>
             <div>
                 &#8679; ${post.upvotes} &#8681 ${post.downvotes}
