@@ -94,15 +94,16 @@ main {
 }
 
 .nav .search-btn {
-    display: none!important;
+    display: none !important;
 }
 
 @media only screen and (max-width: 545px) {
     .nav .search {
-        display: none!important;
+        display: none !important;
     }
+
     .nav .search-btn {
-        display: inline-block!important;
+        display: inline-block !important;
     }
 }
 
@@ -576,23 +577,23 @@ main {
     margin-top: 0.2rem;
 }
 
-.post .meta .author {
+.posts .post .meta .author {
     display: inline-flex;
     align-items: center;
     cursor: pointer;
 }
 
-.post .meta .author .username {
+.posts .post .meta .author .username {
     font-weight: 500;
 }
 
-.post .icon {
+.posts .post .icon {
     display: inline-block;
     vertical-align: middle;
     font-size: inherit;
 }
 
-.post .meta .verified {
+.posts .post .meta .verified {
     margin-left: 0.25rem;
 }
 
@@ -601,6 +602,10 @@ main {
 .post .title {
     font-size: 1.65rem;
     margin-bottom: 0;
+}
+
+.post .meta:not(.posts .post .meta) {
+    margin-bottom: 0.75rem;
 }
 
 .post #author {
@@ -619,11 +624,33 @@ main {
 }
 
 .post .verified {
+    font-size: 1.15rem;
+    vertical-align: middle;
     color: var(--stib-blue-2);
     margin-left: 0.25rem;
 }
 
 .post #date {
-    margin-bottom: 0.75rem;
     font-size: 95%;
+}
+
+.post #edited span {
+    font-size: 90%;
+    font-style: italic;
+}
+
+.post #content {
+    margin-bottom: 0.5rem;
+}
+
+.votes .button:not(:last-of-type) {
+    margin-right: 0.25rem;
+}
+
+.post #attachment {
+    margin-top: 0.75rem;
+}
+
+.post #attachment img, .post #attachment video, .post #attachment audio {
+    max-width: 100%;
 }

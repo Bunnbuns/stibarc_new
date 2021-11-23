@@ -75,17 +75,30 @@
                     <div class="loader"></div>
                 </div>
                 <div class="post" id="post">
-                    <h1 class="title" id="title">Loading</h1>
-                    <a id="author">
-                        <img class="pfp" id="pfp"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                        <span id="username">Loading</span>
-                        <span id="verified"></span>
-                    </a>
-                    <div id="date">Loading</div>
+                    <div class="meta">
+                        <h1 class="title" id="title">Loading</h1>
+                        <a id="author">
+                            <img class="pfp" id="pfp"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                            <span id="username">Loading</span>
+                            <span id="verified"></span>
+                        </a>
+                        <div id="date">Loading</div>
+                        <div id="edited" style="display: none;">
+                            <span title="This post was edited">Edited</span>
+                        </div>
+                    </div>
                     <div id="content">
                         Loading
                     </div>
+                    <div id="attachment" style="display: none;">
+                        <button class="button" id="attachment-btn">View Attachment</button>
+                    </div>
+                    <div class="votes" style="margin-top: 0.75rem;">
+                        <button class="button">&#8679;&nbsp;<span id="upvotes"></span></button>
+                        <button class="button">&#8681;&nbsp;<span id="downvotes"></span></button>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -50,7 +50,7 @@ function toBlock(id, post) {
 				Posted&nbsp;by&nbsp;<a class="author" href="user.html?id=${encodeURIComponent(post.poster)}"><span class="username">${sanetize(post.poster)}</span><span>${post.verified ? verifiedUser() : ""}<span></a>
 			</div>
             <div>
-                &#8679; ${post.upvotes} &#8681 ${post.downvotes}
+                &#8679; ${post.upvotes} &#8681; ${post.downvotes}
 			</div>
 		</div>
 	</div>`)
