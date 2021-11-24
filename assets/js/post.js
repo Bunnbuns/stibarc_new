@@ -91,6 +91,10 @@ function loadPost(id) {
                 }
             }
         }
+        if (json.client) {
+            $("client").innerHTML = `<span class="badge">Posted using ${json.client}</span>`;
+            $("client").style.display = "";
+        }
         // done //
         $("loader").style.display = "none"
         $("post").style.display = ""

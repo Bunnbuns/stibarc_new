@@ -30,7 +30,7 @@
                 <div class="nav-items">
                     <span class="search">
                         <form method="get" action="./search.html">
-                            <input class="input search primary no-border" name="q" type="search" placeholder="Search">
+                            <input class="input search primary no-border" name="q" id="q" type="search" placeholder="Search">
                         </form>
                         <a class="button search-btn icon with-icon" href="./search.html" title="Search"><img
                                 src="./assets/icons/search_white_24dp.svg"></a>
@@ -72,34 +72,16 @@
         <div class="page" style="min-height: calc(100vh - 9.55rem);">
             <div class="nav-height"></div>
             <div class="container">
-                <div class="loader-container" id="loader">
-                    <div class="loader"></div>
+                <div class="mobile-search">
+                    <input class="input search full" name="q" id="mobile-q" type="search" placeholder="Search">
                 </div>
-                <div class="post" id="post">
-                    <div class="meta">
-                        <h1 class="title" id="title">Loading</h1>
-                        <a id="author">
-                            <img class="pfp" id="pfp"
-                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                            <span id="username">Loading</span>
-                            <span id="verified"></span>
-                        </a>
-                        <div id="date">Loading</div>
-                        <div id="edited" style="display: none;">
-                            <span class="badge" title="This post was edited">Edited</span>
-                        </div>
-                    </div>
-                    <div id="content">
-                        Loading
-                    </div>
-                    <div id="attachment" style="display: none;">
-                        <button class="button" id="attachment-btn">View Attachment</button>
-                    </div>
-                    <div class="votes" style="margin: 0.75rem 0;">
-                        <button class="button">&#8679;&nbsp;<span id="upvotes"></span></button>
-                        <button class="button">&#8681;&nbsp;<span id="downvotes"></span></button>
-                    </div>
-                    <div id="client" style="display: none;">
+                <div class="flex-center">
+                    <h1 class="title">Search Results</h1>
+                    <div class="flex-grow"></div>
+                </div>
+                <div class="posts" id="posts">
+                    <div class="loader-container">
+                        <div class="loader"></div>
                     </div>
                 </div>
             </div>
@@ -142,7 +124,7 @@
     </footer>
 
     <script src="./assets/js/global.js"></script>
-    <script src="./assets/js/post.js"></script>
+    <script src="./assets/js/search.js"></script>
 
 </body>
 
