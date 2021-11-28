@@ -371,7 +371,6 @@ main {
 
 .button-group .button {
     border: none;
-    border-radius: unset;
     border-radius: 5px;
 }
 

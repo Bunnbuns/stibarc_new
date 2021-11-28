@@ -29,9 +29,8 @@
                 <span class="flex-grow"></span>
                 <div class="nav-items">
                     <span class="search">
-                        <form method="get" action="./search.html">
-                            <input class="input search primary no-border" name="q" type="search" placeholder="Search">
-                        </form>
+                        <input class="input search primary no-border" name="q" id="q" type="search"
+                            placeholder="Search">
                         <a class="button search-btn icon with-icon" href="./search.html" title="Search"><img
                                 src="./assets/icons/search_white_24dp.svg"></a>
                     </span>
@@ -100,6 +99,11 @@
                         <button class="button">&#8681;&nbsp;<span id="downvotes"></span></button>
                     </div>
                     <div id="client" style="display: none;">
+                    </div>
+                    <h2 class="title size-2">Comments</h2>
+                    <div class="inputs">
+                        <label class="input-label">New Comment</label>
+                        <textarea class="input"></textarea>
                     </div>
                 </div>
             </div>

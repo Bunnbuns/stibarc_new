@@ -6,6 +6,9 @@ function search(query) {
             body: `q=${encodeURIComponent(query)}`
         }).then(response => response.json()).then((json) => {
             var html = ""
+            if (isEmpty(json)) {
+                html = `<h2 class="title size-2">No results</h2>`
+            }
             for (var i in json) {
                 html += toBlock(i, json[i])
             }
@@ -13,19 +16,30 @@ function search(query) {
         }).catch((err) => { console.log(err) });
 }
 
+function searchFromUrl() {
+    var query = getAllUrlParams().q
+    if (query != undefined && query != "") {
+        $("q").value = decodeURI(query)
+        $("mobile-q").value = decodeURI(query)
+        search(query)
+    }
+}
+
 window.onload = function () {
-    $("mobile-q").onkeyup = function (e) {
+    $("q").onkeyup = function (e) {
         if (e.key == "Enter") {
-            var query = $("mobile-q").value;
-            $("q").value = query;
+            var query = $("q").value
             if (query != "") {
-                search(query);
+                window.location = `./search.html?q=${encodeURIComponent(query)}`
             }
         }
     }
-    if (getAllUrlParams().q != undefined && getAllUrlParams().q != "") {
-        $("q").value = getAllUrlParams().q;
-        $("mobile-q").value = getAllUrlParams().q;
-        search(getAllUrlParams().q);
+    $("mobile-q").onkeyup = function (e) {
+        if (e.key == "Enter") {
+            var query = $("mobile-q").value
+            $("q").value = query
+            window.location = `./search.html?q=${encodeURIComponent(query)}`
+        }
     }
+    searchFromUrl()
 }

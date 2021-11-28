@@ -14,6 +14,10 @@ function $(id) {
     }
 }
 
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
+
 function getAllUrlParams() {
     var queries = location.search.slice(1).split("&")
     var obj = {}
@@ -82,7 +86,7 @@ function emojify(text) {
                 text = text.replace(new RegExp(`:${emoji}:`, 'g'), `<img src="${rootCDN}/emojis/${emojilist[emoji].filename}" class="emoji" title=":${emoji}:" alt=":${emoji}:"></img>`)
             }
             return text
-        });
+        })
     } else {
         for (var emoji in emojilist) {
             text = text.replace(new RegExp(`:${emoji}:`, 'g'), `<img src="${rootCDN}/emojis/${emojilist[emoji].filename}" class="emoji" title=":${emoji}:" alt=":${emoji}:"></img>`)
@@ -160,7 +164,7 @@ if (loggedIn) {
 }
 
 if (localStorage.getItem('pfp') !== null && localStorage.getItem('pfp') !== "") {
-    $("pfpBtnImg").src = localStorage.getItem('pfp');
+    $("pfpBtnImg").src = localStorage.getItem('pfp')
 }
 
 function getUserInfo() {
@@ -191,4 +195,13 @@ function getUserPfp(callback, username) {
     };
     xhttp.open('GET', `${rootAPI}/v2/getuserpfp.sjs?id=${username}`, true)
     xhttp.send()
+}
+
+$("q").onkeyup = function (e) {
+    if (e.key == "Enter") {
+        var query = $("q").value
+        if (query != "") {
+            window.location = `./search.html?q=${encodeURIComponent(query)}`
+        }
+    }
 }
