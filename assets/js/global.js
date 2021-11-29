@@ -149,7 +149,7 @@ const loggedOutDivs = $(".loggedOut")
 const loggedInDivs = $(".loggedIn")
 if (loggedIn) {
     for (var i = 0; i < loggedInDivs.length; i++) {
-        loggedInDivs[i].style.display = ""
+        loggedInDivs[i].style.display = "inherit"
     }
     for (var i = 0; i < loggedOutDivs.length; i++) {
         loggedOutDivs[i].style.display = "none"
@@ -159,7 +159,7 @@ if (loggedIn) {
         loggedInDivs[i].style.display = "none"
     }
     for (var i = 0; i < loggedOutDivs.length; i++) {
-        loggedOutDivs[i].style.display = ""
+        loggedOutDivs[i].style.display = "inherit"
     }
 }
 

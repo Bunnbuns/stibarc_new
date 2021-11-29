@@ -508,6 +508,10 @@ main {
     color: var(--stib-blue-2)
 }
 
+.loggedOut {
+    display: none;
+}
+
 /* footer */
 
 .footer {
