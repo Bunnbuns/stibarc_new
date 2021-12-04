@@ -90,26 +90,31 @@
                             <span class="badge" title="This post was edited">Edited</span>
                         </div>
                     </div>
-                    <div id="content">
-                        Loading
+                    <div class="post-actions">
+                        <div id="content">
+                            Loading
+                        </div>
+                        <div id="attachment" style="display: none;">
+                            <button class="button" id="attachment-btn">View Attachment</button>
+                        </div>
+                        <div class="votes">
+                            <button class="button" onclick="upvote()">&#8679;&nbsp;<span id="upvotes"></span></button>
+                            <button class="button" onclick="downvote()">&#8681;&nbsp;<span
+                                    id="downvotes"></span></button>
+                        </div>
+                        <div id="client" style="display: none;">
+                        </div>
                     </div>
-                    <div id="attachment" style="display: none;">
-                        <button class="button" id="attachment-btn">View Attachment</button>
+                    <div>
+                        <h2 class="title size-2">Comments</h2>
                     </div>
-                    <div class="votes" style="margin: 0.75rem 0;">
-                        <button class="button" onclick="upvote()">&#8679;&nbsp;<span id="upvotes"></span></button>
-                        <button class="button" onclick="downvote()">&#8681;&nbsp;<span id="downvotes"></span></button>
-                    </div>
-                    <div id="client" style="display: none;">
-                    </div>
-                    <h2 class="title size-2">Comments</h2>
                     <div class="loggedIn">
                         <div class="inputs">
                             <label class="input-label">New Comment</label>
                             <textarea class="input"></textarea>
                         </div>
                     </div>
-                    <div class="comments">
+                    <div id="comments">
                         <div class="loader-container" id="comments-loader">
                             <div class="loader"></div>
                         </div>

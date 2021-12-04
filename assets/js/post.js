@@ -1,5 +1,57 @@
 var id = getAllUrlParams().id;
 
+function commentBlock(comment) {
+    var html = `<div id="comment">
+		<div>
+			<a class="comment-username" href="user.html?id=${encodeURIComponent(comment.poster)}">`
+    html += `<img src="${comment.pfp}" class="pfp" style="vertical-align:middle;margin-right:5px;" title="Commenter profile picture" alt="Commenter profile picture"></img>`
+    html += `${sanetize(comment.poster)}</a>${comment.verified ? verifiedUser() : ""}
+		</div>
+		<div>
+			${emojify(greenify(sanetize(comment.content)))}
+		</div>
+		<a class="replyto" href="javascript:replyto('${comment.poster.replace(/'/g, "\\'")}')">
+			<i>Reply</i>
+		</a>
+	</div><br/>`
+    return html
+}
+
+function replyto(user) {
+    $("comtent").value += `@${user} `;
+    $("comtent").focus();
+}
+
+function upvote() {
+    if (loggedIn) {
+        fetch("https://api.stibarc.com/upvote.sjs",
+            {
+                method: "POST",
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: "id=" + id + "&sess=" + sess
+            }
+        ).then(response => response.json()).then((json) => {
+            $("upvotes").innerText = json.upvotes
+            $("downvotes").innerText = json.downvotes
+        }).catch((err) => { console.log(err) })
+    }
+}
+
+function downvote() {
+    if (loggedIn) {
+        fetch("https://api.stibarc.com/downvote.sjs",
+            {
+                method: "POST",
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: "id=" + id + "&sess=" + sess
+            }
+        ).then(response => response.json()).then((json) => {
+            $("upvotes").innerText = json.upvotes
+            $("downvotes").innerText = json.downvotes
+        }).catch((err) => { console.log(err) })
+    }
+}
+
 function loadPost(id) {
     fetch(`${rootAPI}/v2/getpost.sjs?id=${id}`).then(response => response.json()).then((json) => {
         document.title = `${json.title} - STiBaRC`
@@ -95,7 +147,16 @@ function loadPost(id) {
             $("client").innerHTML = `<span class="badge">Posted using ${json.client}</span>`;
             $("client").style.display = "";
         }
-        // done //
+        if (json.comments != undefined) {
+			var html = "";
+			for (var i in json.comments) {
+				html += commentBlock(json.comments[i]);
+			}
+			$("comments").innerHTML = html;
+		} else {
+			$("comments").innerHTML = '<div id="comment">No comments</div>';
+		}
+        // post loaded //
         $("loader").style.display = "none"
         $("post").style.display = ""
     }).catch((err) => { console.log(err) })

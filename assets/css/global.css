@@ -250,7 +250,8 @@ main {
     cursor: pointer;
     text-decoration: none;
     font-weight: 500;
-    transition: all .17s ease-out;
+    -webkit-transition: background-color .17s ease, color .17s ease;
+    transition: background-color .17s ease, color .17s ease;
     background-color: var(--item);
     color: var(--item-primary);
 }
@@ -397,6 +398,7 @@ main {
 
 .input:focus {
     border-color: var(--item-hover);
+    outline: none;
 }
 
 .input.primary {
@@ -654,7 +656,7 @@ main {
 }
 
 .post #attachment {
-    margin-top: 0.75rem;
+    margin-top: 1rem;
 }
 
 .post #attachment img, .post #attachment video, .post #attachment audio {
@@ -665,6 +667,22 @@ main {
     .post #attachment img, .post #attachment video, .post #attachment audio {
         max-height: 90vh;
     }
+}
+
+.votes {
+    margin-top: 0.75rem;
+}
+
+.post-actions {
+    margin-bottom: 1.25rem;
+}
+
+#client {
+    margin-top: 0.75rem;
+}
+
+#comments {
+    margin-top: 1rem;
 }
 
 /* search */
