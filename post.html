@@ -37,8 +37,8 @@
                     <span class="loggedOut">
                         <span>
                             <a href="https://stibarc.com/register.html" class="button">Sign&nbsp;up</a><a
-                            href="https://stibarc.com/oauth/?id=17f9de2a01219ab488b8&perms="
-                            class="button outline">Sign&nbsp;in</a>
+                                href="https://stibarc.com/oauth/?id=17f9de2a01219ab488b8&perms=everything"
+                                class="button outline">Sign&nbsp;in</a>
                         </span>
                     </span>
                     <span class="loggedIn flex-center">
@@ -76,7 +76,7 @@
                 <div class="loader-container" id="loader">
                     <div class="loader"></div>
                 </div>
-                <div class="post" id="post">
+                <div class="post" id="post" style="display: none;">
                     <div class="meta">
                         <h1 class="title" id="title">Loading</h1>
                         <a id="author">
@@ -97,15 +97,22 @@
                         <button class="button" id="attachment-btn">View Attachment</button>
                     </div>
                     <div class="votes" style="margin: 0.75rem 0;">
-                        <button class="button">&#8679;&nbsp;<span id="upvotes"></span></button>
-                        <button class="button">&#8681;&nbsp;<span id="downvotes"></span></button>
+                        <button class="button" onclick="upvote()">&#8679;&nbsp;<span id="upvotes"></span></button>
+                        <button class="button" onclick="downvote()">&#8681;&nbsp;<span id="downvotes"></span></button>
                     </div>
                     <div id="client" style="display: none;">
                     </div>
                     <h2 class="title size-2">Comments</h2>
-                    <div class="inputs">
-                        <label class="input-label">New Comment</label>
-                        <textarea class="input"></textarea>
+                    <div class="loggedIn">
+                        <div class="inputs">
+                            <label class="input-label">New Comment</label>
+                            <textarea class="input"></textarea>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <div class="loader-container" id="comments-loader">
+                            <div class="loader"></div>
+                        </div>
                     </div>
                 </div>
             </div>
