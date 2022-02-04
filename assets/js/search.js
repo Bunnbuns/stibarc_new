@@ -1,9 +1,11 @@
 function search(query) {
+    var searchQuery = {}
+    searchQuery["q"] = query
     fetch(`${rootAPI}/v3/postsearch.sjs`,
         {
             method: "POST",
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: `q=${encodeURIComponent(query)}`
+            body: serialize(searchQuery)
         }).then(response => response.json()).then((json) => {
             var html = ""
             if (isEmpty(json)) {

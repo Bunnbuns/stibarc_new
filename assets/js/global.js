@@ -42,6 +42,15 @@ function truncate(str, len) {
     return returnValue
 }
 
+function serialize(obj) {
+    var str = []
+    for (var p in obj)
+        if (obj.hasOwnProperty(p)) {
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]))
+        }
+    return str.join("&")
+}
+
 function verifiedUser() {
     return `<span class="material-icons-round icon verified" title="Verified User">verified</span>`
 }
