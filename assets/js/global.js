@@ -77,7 +77,7 @@ var emojilist = localStorage.emojilist || "{}"
 emojilist = JSON.parse(emojilist)
 
 function refreshEmojis(callback) {
-    fetch(`${rootAPI}/emojis/index.json`).then(response => response.json()).then((response) => {
+    fetch(`${rootCDN}/emojis/index.json`).then(response => response.json()).then((response) => {
         if (JSON.stringify(response) != localStorage.emojilist) {
             localStorage.emojilist = JSON.stringify(response)
             emojilist = response
