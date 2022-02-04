@@ -90,20 +90,19 @@
         </div>
     </div>
 
+    <script src="./assets/js/global.js"></script>
     <script>
         function logout() {
-            var sess = window.localStorage.getItem("sess");
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("GET", "https://api.stibarc.com/logout.sjs?sess=" + sess, false);
-            xmlHttp.send(null);
-            window.localStorage.removeItem("sess");
-            window.localStorage.removeItem("username");
-            window.localStorage.removeItem("pfp");
-            location.href = "/";
+            fetch(`${rootAPI}/logout.sjs?sess=${sess}`).then(() => {
+                localStorage.removeItem("sess")
+                localStorage.removeItem("username")
+                localStorage.removeItem("pfp")
+                location.href = "./"
+            })
         }
 
         window.onload = function () {
-            logout();
+            logout()
         }
     </script>
 
