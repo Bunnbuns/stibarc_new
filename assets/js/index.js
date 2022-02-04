@@ -81,19 +81,21 @@ function loadPosts() {
         feedSelect(feedState)
     }).catch((err) => { console.log(err) })
 
-    fetch(`${rootAPI}/v3/getfollowposts.sjs?sess=${sess}`).then(response => response.json()).then((json) => {
-        $("followed-posts").innerHTML = ""
-        var keys = Object.keys(json)
-        var posts = ""
-        for (var i = keys.length - 1; i >= 0; i--) {
-            posts += toBlock(keys[i], json[keys[i]])
-            lastfollowloaded = keys[i]
-        }
-        lastfollowloaded = keys[0]
-        $("followed-posts").innerHTML = posts
-        $("loadMoreContainer").appendChild(loadMoreBlock("followed-load-more"))
-        feedSelect(feedState)
-    }).catch((err) => { console.log(err) })
+    if (loggedIn) {
+        fetch(`${rootAPI}/v3/getfollowposts.sjs?sess=${sess}`).then(response => response.json()).then((json) => {
+            $("followed-posts").innerHTML = ""
+            var keys = Object.keys(json)
+            var posts = ""
+            for (var i = keys.length - 1; i >= 0; i--) {
+                posts += toBlock(keys[i], json[keys[i]])
+                lastfollowloaded = keys[i]
+            }
+            lastfollowloaded = keys[0]
+            $("followed-posts").innerHTML = posts
+            $("loadMoreContainer").appendChild(loadMoreBlock("followed-load-more"))
+            feedSelect(feedState)
+        }).catch((err) => { console.log(err) })
+    }
 }
 
 loadPosts()
